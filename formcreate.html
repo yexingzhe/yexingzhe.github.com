@@ -1,0 +1,37 @@
+<script type="text/javascript" src="jquery.min.js"></script>
+<script>
+var slice="<br />";
+function add_single(name,value,type){
+    $("#form1").append("<input name='"+name+"' type='"+type+"' value='"+value+"' />"+slice);
+}
+function add_multi(name,value,type,count){
+    $.each(name,function(i,n){
+    $("#form1").append("<input type='radio' name='"+value+"' id='"+n+"' value='"+n+"' /><label for='"+n+"'>"+i+"</label>"+slice);
+    });
+    
+}
+</script>
+<body>
+<div>
+<form action="" method="" id="form1">
+<input type="" value="" /><br />
+<textarea>
+</textarea><br />
+<input type="submit" value="提交" /><br />
+<input type="reset" value="重置" /><br />
+</form>
+</div>
+<input type="button" value="单行输入框"><br />
+<input type="button" value="多行输入框"><br />
+<input type="button" value="单选"><br />
+<input type="button" value="多选"><br />
+<input type="button" value="下拉菜单"><br />
+<input type="button" value="进度条"><br />
+<input type="button" value="图片"><br />
+<input type="button" value="二维码"><br />
+
+<script>
+add_single("fds","12","hidden");
+add_multi("{a:1,b:2}","12","hidden");
+</script>
+</body>
